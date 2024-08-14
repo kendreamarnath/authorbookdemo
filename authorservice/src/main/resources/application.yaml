@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: book-service
+
+  # Configure Feign client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: swagger-ui.html
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info" # http://localhost:8100/actuator/
+  server:
+    port: 8101
